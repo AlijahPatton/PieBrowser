@@ -1,39 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Network permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-
-    <!-- Download permissions -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        android:maxSdkVersion="28" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
-        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-
-    <!-- Camera (QR scanner) -->
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera" android:required="false" />
-
-    <!-- Screenshot / screen recorder -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
-
-    <!-- Floating bubble -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
-    <!-- VPN -->
     <uses-permission android:name="android.permission.BIND_VPN_SERVICE" />
-
-    <!-- Location spoofing -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"
-        tools:ignore="ProtectedPermissions" />
-
-    <!-- Vibrate (QR feedback) -->
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
@@ -45,23 +25,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PieBrowser"
         android:usesCleartextTraffic="true"
-        android:hardwareAccelerated="true"
-        android:largeHeap="false">
+        android:hardwareAccelerated="true">
 
-        <!-- Main Browser Activity -->
-        <activity
-            android:name=".browser.BrowserActivity"
-            android:exported="true"
+        <activity android:name=".browser.BrowserActivity" android:exported="true"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:launchMode="singleTask"
-            android:windowSoftInputMode="adjustResize">
-
+            android:launchMode="singleTask" android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-            <!-- Handle web URLs -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -71,88 +43,41 @@
             </intent-filter>
         </activity>
 
-        <!-- Settings Activity -->
-        <activity
-            android:name=".settings.SettingsActivity"
-            android:exported="false"
-            android:label="@string/settings"
-            android:parentActivityName=".browser.BrowserActivity" />
+        <activity android:name=".settings.SettingsActivity" android:exported="false"
+            android:label="@string/settings" android:parentActivityName=".browser.BrowserActivity" />
 
-        <!-- Downloads Activity -->
-        <activity
-            android:name=".downloads.DownloadsActivity"
-            android:exported="false"
-            android:label="@string/downloads"
-            android:parentActivityName=".browser.BrowserActivity" />
+        <activity android:name=".downloads.DownloadsActivity" android:exported="false"
+            android:label="@string/downloads" android:parentActivityName=".browser.BrowserActivity" />
 
-        <!-- Download Service -->
-        <service
-            android:name=".downloads.DownloadService"
-            android:exported="false" />
+        <activity android:name=".reader.ReaderActivity" android:exported="false"
+            android:label="Reader Mode" android:parentActivityName=".browser.BrowserActivity" />
 
-        <!-- Download notification channel provider -->
-        <provider
-            android:name="androidx.core.content.FileProvider"
+        <activity android:name=".password.PasswordManagerActivity" android:exported="false"
+            android:label="Passwords" android:parentActivityName=".browser.BrowserActivity" />
+
+        <activity android:name=".qrscanner.QRScannerActivity" android:exported="false"
+            android:label="QR Scanner" android:screenOrientation="portrait" />
+
+        <provider android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
+            android:exported="false" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <!-- Reader Mode -->
-        <activity android:name=".reader.ReaderActivity"
-            android:exported="false"
-            android:label="Reader Mode"
-            android:parentActivityName=".browser.BrowserActivity" />
-
-        <!-- Password Manager -->
-        <activity android:name=".password.PasswordManagerActivity"
-            android:exported="false"
-            android:label="Passwords"
-            android:parentActivityName=".browser.BrowserActivity" />
-
-        <!-- QR Scanner -->
-        <activity android:name=".qrscanner.QRScannerActivity"
-            android:exported="false"
-            android:label="QR Scanner"
-            android:screenOrientation="portrait" />
-
-        <!-- Offline Pages -->
-        <activity android:name=".offline.OfflinePagesActivity"
-            android:exported="false"
-            android:label="Offline Pages"
-            android:parentActivityName=".browser.BrowserActivity" />
-
-        <!-- Start Page / New Tab -->
-        <activity android:name=".startpage.StartPageActivity"
-            android:exported="false"
-            android:label="New Tab" />
-
-        <!-- Floating Bubble Service -->
         <service android:name=".floating.FloatingBubbleService"
-            android:exported="false"
-            android:foregroundServiceType="mediaProjection" />
+            android:exported="false" android:foregroundServiceType="mediaProjection" />
 
-        <!-- Screen Recorder Service -->
-        <service android:name=".screenshot.ScreenRecorderService"
-            android:exported="false"
-            android:foregroundServiceType="mediaProjection" />
-
-        <!-- VPN Service -->
-        <service android:name=".security.PieVpnService"
-            android:exported="false"
+        <service android:name=".security.PieVpnService" android:exported="false"
             android:permission="android.permission.BIND_VPN_SERVICE">
             <intent-filter>
                 <action android:name="android.net.VpnService" />
             </intent-filter>
         </service>
 
-        <!-- Offline page worker -->
-        <provider
-            android:name="androidx.startup.InitializationProvider"
+        <provider android:name="androidx.startup.InitializationProvider"
             android:authorities="${applicationId}.androidx-startup"
-            android:exported="false"
-            tools:node="merge" />
+            android:exported="false" tools:node="merge" />
+
+    </application>
 </manifest>
