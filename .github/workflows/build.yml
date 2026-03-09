@@ -1,45 +1,21 @@
-name: Build PieBrowser APK
-
+name: Build APK
 on:
   push:
     branches: [ main, master ]
   workflow_dispatch:
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
-
-      - name: Setup Android SDK
-        uses: amyu/setup-android@v4
-        with:
-          sdk-version: 34
-          build-tools-version: 33.0.0
-
-      - name: Accept licenses
-        run: |
-          mkdir -p $ANDROID_HOME/licenses
-          printf '\n24333f8a63b6825ea9c5514f83c2829b004d1fee\nd56f5187479451eabf01fb78af6dfcb131a6481e' > $ANDROID_HOME/licenses/android-sdk-license
-          printf '\n84831b9409646a918e30573bab4c9c91346d8abd' > $ANDROID_HOME/licenses/android-sdk-preview-license
-
-      - name: Grant gradlew permission
-        run: chmod +x gradlew
-
-      - name: Build Debug APK
-        run: ./gradlew assembleDebug --no-daemon --warning-mode none
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
+      - uses: android-actions/setup-android@v3
+      - run: mkdir -p $ANDROID_HOME/licenses && echo -e "\n24333f8a63b6825ea9c5514f83c2829b004d1fee\nd56f5187479451eabf01fb78af6dfcb131a6481e" > $ANDROID_HOME/licenses/android-sdk-license && sdkmanager "platforms;android-34" "build-tools;34.0.0"
+      - run: chmod +x gradlew && ./gradlew assembleDebug --no-daemon --warning-mode none
+      - uses: actions/upload-artifact@v4
         with:
           name: PieBrowser-debug
           path: app/build/outputs/apk/debug/*.apk
-          retention-days: 30
