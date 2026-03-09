@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    compileSdk 34
+    compileSdk 33
     namespace 'com.piebrowser'
 
     defaultConfig {
         applicationId "com.piebrowser"
         minSdk 21           // Android 5.0 Lollipop and higher
-        targetSdk 34
+        targetSdk 33
         versionCode 1
         versionName "1.0.0"
         multiDexEnabled true
