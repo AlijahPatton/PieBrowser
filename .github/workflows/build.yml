@@ -23,7 +23,7 @@ jobs:
         uses: amyu/setup-android@v4
         with:
           sdk-version: 34
-          build-tools-version: 34.0.0
+          build-tools-version: 33.0.0
 
       - name: Accept licenses
         run: |
