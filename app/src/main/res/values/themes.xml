@@ -1,90 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- ── Base Theme ─────────────────────────────────────────────────────── -->
     <style name="Theme.PieBrowser" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:windowBackground">?attr/colorBackground</item>
-        <item name="android:statusBarColor">?attr/colorSurface</item>
-        <item name="android:navigationBarColor">?attr/colorSurface</item>
-        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:statusBarColor">@android:color/black</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
     </style>
 
-    <!-- ── Light Theme ────────────────────────────────────────────────────── -->
     <style name="Theme.PieBrowser.Light" parent="Theme.PieBrowser">
         <item name="colorPrimary">#1976D2</item>
         <item name="colorPrimaryVariant">#0D47A1</item>
         <item name="colorSecondary">#03A9F4</item>
-        <item name="colorBackground">#FFFFFF</item>
         <item name="colorSurface">#F5F5F5</item>
         <item name="colorOnPrimary">#FFFFFF</item>
-        <item name="colorOnBackground">#212121</item>
         <item name="android:textColorPrimary">#212121</item>
-        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@android:color/white</item>
     </style>
 
-    <!-- ── Dark Theme ─────────────────────────────────────────────────────── -->
     <style name="Theme.PieBrowser.Dark" parent="Theme.PieBrowser">
         <item name="colorPrimary">#90CAF9</item>
         <item name="colorPrimaryVariant">#42A5F5</item>
         <item name="colorSecondary">#4FC3F7</item>
-        <item name="colorBackground">#121212</item>
         <item name="colorSurface">#1E1E1E</item>
         <item name="colorOnPrimary">#000000</item>
-        <item name="colorOnBackground">#EEEEEE</item>
         <item name="android:textColorPrimary">#EEEEEE</item>
-        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">#121212</item>
     </style>
 
-    <!-- ── AMOLED Black ───────────────────────────────────────────────────── -->
     <style name="Theme.PieBrowser.Amoled" parent="Theme.PieBrowser">
         <item name="colorPrimary">#FFFFFF</item>
         <item name="colorPrimaryVariant">#E0E0E0</item>
         <item name="colorSecondary">#B0BEC5</item>
-        <item name="colorBackground">#000000</item>
         <item name="colorSurface">#0A0A0A</item>
         <item name="colorOnPrimary">#000000</item>
-        <item name="colorOnBackground">#FFFFFF</item>
         <item name="android:textColorPrimary">#FFFFFF</item>
-        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">#000000</item>
     </style>
 
-    <!-- ── Midnight Blue ──────────────────────────────────────────────────── -->
     <style name="Theme.PieBrowser.MidnightBlue" parent="Theme.PieBrowser">
         <item name="colorPrimary">#5C9BFF</item>
         <item name="colorPrimaryVariant">#3D7EFF</item>
         <item name="colorSecondary">#82CFFF</item>
-        <item name="colorBackground">#0A0E1A</item>
         <item name="colorSurface">#111827</item>
         <item name="colorOnPrimary">#FFFFFF</item>
-        <item name="colorOnBackground">#DCE5FF</item>
         <item name="android:textColorPrimary">#DCE5FF</item>
-        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">#0A0E1A</item>
     </style>
 
-    <!-- ── Forest Green ───────────────────────────────────────────────────── -->
     <style name="Theme.PieBrowser.Forest" parent="Theme.PieBrowser">
         <item name="colorPrimary">#4CAF50</item>
         <item name="colorPrimaryVariant">#388E3C</item>
         <item name="colorSecondary">#A5D6A7</item>
-        <item name="colorBackground">#0D1A0F</item>
         <item name="colorSurface">#1B2B1D</item>
         <item name="colorOnPrimary">#FFFFFF</item>
-        <item name="colorOnBackground">#C8E6C9</item>
         <item name="android:textColorPrimary">#C8E6C9</item>
-        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">#0D1A0F</item>
     </style>
 
-    <!-- ── Sunset ─────────────────────────────────────────────────────────── -->
     <style name="Theme.PieBrowser.Sunset" parent="Theme.PieBrowser">
         <item name="colorPrimary">#FF6D00</item>
         <item name="colorPrimaryVariant">#E65100</item>
         <item name="colorSecondary">#FFAB40</item>
-        <item name="colorBackground">#1A0A00</item>
         <item name="colorSurface">#2A1200</item>
         <item name="colorOnPrimary">#FFFFFF</item>
-        <item name="colorOnBackground">#FFCCBC</item>
         <item name="android:textColorPrimary">#FFCCBC</item>
-        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">#1A0A00</item>
     </style>
 
 </resources>
