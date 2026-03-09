@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="?attr/colorBackground"
+    android:padding="32dp">
+
+    <!-- Pie emoji / logo -->
+    <TextView
+        android:id="@+id/splashLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🥧"
+        android:textSize="80sp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- App name -->
+    <TextView
+        android:id="@+id/splashAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pie Browser"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorPrimary"
+        android:letterSpacing="-0.02"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Tagline -->
+    <TextView
+        android:id="@+id/splashTagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fast · Private · Yours"
+        android:textSize="15sp"
+        android:textColor="?android:attr/textColorSecondary"
+        android:letterSpacing="0.08" />
+
+</LinearLayout>

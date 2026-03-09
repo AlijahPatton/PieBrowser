@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Search Engines -->
+    <string-array name="search_engine_names">
+        <item>DuckDuckGo (private)</item>
+        <item>Google</item>
+        <item>Bing</item>
+        <item>Brave Search</item>
+        <item>Startpage (private)</item>
+    </string-array>
+    <string-array name="search_engine_urls">
+        <item>https://duckduckgo.com/?q=</item>
+        <item>https://www.google.com/search?q=</item>
+        <item>https://www.bing.com/search?q=</item>
+        <item>https://search.brave.com/search?q=</item>
+        <item>https://www.startpage.com/search?q=</item>
+    </string-array>
+
+    <!-- Themes -->
+    <string-array name="theme_names">
+        <item>Follow System</item>
+        <item>Light</item>
+        <item>Dark</item>
+        <item>AMOLED Black</item>
+        <item>Midnight Blue</item>
+        <item>Forest</item>
+        <item>Sunset</item>
+    </string-array>
+    <string-array name="theme_values">
+        <item>SYSTEM</item>
+        <item>LIGHT</item>
+        <item>DARK</item>
+        <item>AMOLED</item>
+        <item>MIDNIGHT_BLUE</item>
+        <item>FOREST</item>
+        <item>SUNSET</item>
+    </string-array>
+
+    <!-- Night Mode -->
+    <string-array name="night_mode_names">
+        <item>Off</item>
+        <item>Warm (light blue light filter)</item>
+        <item>Night (strong blue light filter)</item>
+        <item>Deep Night (maximum filter)</item>
+    </string-array>
+    <string-array name="night_mode_values">
+        <item>OFF</item>
+        <item>WARM</item>
+        <item>NIGHT</item>
+        <item>DEEP_NIGHT</item>
+    </string-array>
+
+    <!-- Location Spoofing Presets -->
+    <string-array name="location_names">
+        <item>Null Island (0°, 0°)</item>
+        <item>New York, USA</item>
+        <item>London, UK</item>
+        <item>Tokyo, Japan</item>
+        <item>Sydney, Australia</item>
+        <item>Paris, France</item>
+        <item>Custom…</item>
+    </string-array>
+    <string-array name="location_coords">
+        <item>0.0,0.0</item>
+        <item>40.7128,-74.0060</item>
+        <item>51.5074,-0.1278</item>
+        <item>35.6762,139.6503</item>
+        <item>-33.8688,151.2093</item>
+        <item>48.8566,2.3522</item>
+        <item>custom</item>
+    </string-array>
+
+    <!-- Translate target languages -->
+    <string-array name="translate_language_names">
+        <item>Spanish</item>
+        <item>French</item>
+        <item>German</item>
+        <item>Italian</item>
+        <item>Portuguese</item>
+        <item>Chinese</item>
+        <item>Japanese</item>
+        <item>Korean</item>
+        <item>Arabic</item>
+        <item>Hindi</item>
+        <item>Russian</item>
+        <item>Turkish</item>
+        <item>Dutch</item>
+        <item>Polish</item>
+        <item>Swedish</item>
+    </string-array>
+</resources>
